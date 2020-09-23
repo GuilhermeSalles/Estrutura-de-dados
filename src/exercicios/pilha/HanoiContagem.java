@@ -2,7 +2,7 @@ package exercicios.pilha;
 
 import java.util.Stack;
 
-public class Exercicio08 {
+public class HanoiContagem {
 	private static long numMov;
 	public static void main(String[] args) {
 
@@ -10,6 +10,8 @@ public class Exercicio08 {
 		Stack<String> dest = new Stack<>();
 		Stack<String> aux = new Stack<>();
 		
+		original.push("|||||");
+		original.push("||||");
 		original.push("|||");
 		original.push("||");
 		original.push("|");
@@ -24,10 +26,6 @@ public class Exercicio08 {
 			numMov++;
 			torreDeHanoi(n - 1, original, aux, dest);
 			dest.push(original.pop());
-			System.out.println("------");
-			System.out.println("Original: " + original);
-			System.out.println("Destino: " + dest);
-			System.out.println("Aux: " + aux);
 			torreDeHanoi(n - 1, aux, dest, original);
 		}
 
